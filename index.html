@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JS в HTML</title>
+</head>
+
+<body>
+
+  <script>
+
+// Запитуємо рік народження
+var birthYear = prompt("Введіть ваш рік народження:");
+
+// Запитуємо місто проживання
+var city = prompt("Введіть ваше місто проживання:");
+
+// Запитуємо улюблений вид спорту
+var favoriteSport = prompt("Введіть ваш улюблений вид спорту:");
+
+// Визначаємо вік користувача
+var currentYear = new Date().getFullYear();
+var age = currentYear - birthYear;
+
+// Створюємо змінну для повідомлення
+var message;
+
+// Перевіряємо, чи місто є столицею
+if (city === "Київ" || city === "Вашингтон" || city === "Лондон") {
+    // Визначаємо країну
+    var country;
+    switch (city) {
+        case "Київ":
+            country = "Україна";
+            break;
+        case "Вашингтон":
+            country = "США";
+            break;
+        case "Лондон":
+            country = "Велика Британія";
+            break;
+    }
+    // Формуємо повідомлення
+    message = "Ти живеш у столиці " + country + ". Твій улюблений вид спорту - " + favoriteSport + ".";
+} else {
+    // Формуємо повідомлення для інших міст
+    message = "Ти живеш у місті " + city + ". Твій улюблений вид спорту - " + favoriteSport + ".";
+}
+
+// Відображаємо повідомлення
+alert("Твій вік: " + age + ". " + message);
+
+
+  </script>
+
+</body>
+
+</html>
